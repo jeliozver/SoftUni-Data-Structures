@@ -1,4 +1,4 @@
-﻿namespace P06_Sequence_N_M
+namespace P06_Sequence_N_M
 {
     using System;
     using System.Collections.Generic;
@@ -28,8 +28,9 @@
             int n = input[0];
             int m = input[1];
 
-            if (n >= m)
+            if (n == m)
             {
+                Console.WriteLine(n);
                 return;
             }
 
