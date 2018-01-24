@@ -49,7 +49,7 @@ public class StartUp
 
         // P08-All-Subtrees-With-a-Given-Sum (uncomment next three lines if you want to test in Judge) (80 / 100)
         // int sum = int.Parse(Console.ReadLine());
-        // List<Tree<int>> subTrees = root.GetSubTrees();
+        // List<Tree<int>> subTrees = root.OrderDFS();
         // PrintSubTreesOfSum(subTrees, sum);
     }
 

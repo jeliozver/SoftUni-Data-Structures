@@ -95,28 +95,23 @@ public class Tree<T>
         }
     }
 
-    public List<Tree<T>> GetSubTrees()
+    public List<Tree<T>> OrderDFS()
     {
-        var subTrees = new List<Tree<T>>();
+        var result = new List<Tree<T>>();
 
-        this.GetSubTreesRec(this, subTrees);
+        this.DFS(this, result);
 
-        return subTrees;
+        return result;
     }
 
-    private void GetSubTreesRec(Tree<T> node, List<Tree<T>> subTrees)
+    private void DFS(Tree<T> tree, List<Tree<T>> result)
     {
-        if (node == null)
+        foreach (var child in tree.Children)
         {
-            return;
+            this.DFS(child, result);
         }
 
-        subTrees.Add(node);
-
-        foreach (var child in node.Children)
-        {
-            child.GetSubTreesRec(child, subTrees);
-        }
+        result.Add(tree);
     }
 
     public List<Tree<T>> GetNodesDeepness(int deepness = 0)
