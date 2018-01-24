@@ -47,15 +47,10 @@ public class StartUp
         // List<Tree<int>> leafNodes = root.GetLeafNodes();
         // PrintPathsOfSum(leafNodes, sum);
 
-        // P08-All-Subtrees-With-a-Given-Sum (uncomment next eight lines if you want to test in Judge) (60 / 100)
+        // P08-All-Subtrees-With-a-Given-Sum (uncomment next three lines if you want to test in Judge) (80 / 100)
         // int sum = int.Parse(Console.ReadLine());
-        // List<Tree<int>> middleNodes = new List<Tree<int>>();
-        // foreach (var node in nodeByValue.Values)
-        //{
-        //    middleNodes.AddRange(node.GetMiddleNodes());
-        //}
-        // var filter = middleNodes.Distinct().ToList();
-        // PrintSubTreesOfSum(filter, sum);
+        // List<Tree<int>> subTrees = root.GetSubTrees();
+        // PrintSubTreesOfSum(subTrees, sum);
     }
 
     public static void ReadTree()
@@ -135,11 +130,11 @@ public class StartUp
         }
     }
 
-    public static void PrintSubTreesOfSum(List<Tree<int>> middleNodes, int sum)
+    public static void PrintSubTreesOfSum(List<Tree<int>> subTrees, int sum)
     {
         Console.WriteLine($"Subtrees of sum {sum}:");
 
-        foreach (var node in middleNodes)
+        foreach (var node in subTrees)
         {
             var sb = new StringBuilder();
             int currentSum = node.Value;

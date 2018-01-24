@@ -95,6 +95,30 @@ public class Tree<T>
         }
     }
 
+    public List<Tree<T>> GetSubTrees()
+    {
+        var subTrees = new List<Tree<T>>();
+
+        this.GetSubTreesRec(this, subTrees);
+
+        return subTrees;
+    }
+
+    private void GetSubTreesRec(Tree<T> node, List<Tree<T>> subTrees)
+    {
+        if (node == null)
+        {
+            return;
+        }
+
+        subTrees.Add(node);
+
+        foreach (var child in node.Children)
+        {
+            child.GetSubTreesRec(child, subTrees);
+        }
+    }
+
     public List<Tree<T>> GetNodesDeepness(int deepness = 0)
     {
         var result = new List<Tree<T>>();
