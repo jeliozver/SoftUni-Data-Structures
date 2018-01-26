@@ -95,23 +95,23 @@ public class Tree<T>
         }
     }
 
-    public List<Tree<T>> OrderDFS()
+    public List<T> OrderDFS()
     {
-        var result = new List<Tree<T>>();
+        var result = new List<T>();
 
         this.DFS(this, result);
 
         return result;
     }
 
-    private void DFS(Tree<T> tree, List<Tree<T>> result)
+    private void DFS(Tree<T> tree, List<T> result)
     {
+        result.Add(tree.Value);
+
         foreach (var child in tree.Children)
         {
             this.DFS(child, result);
         }
-
-        result.Add(tree);
     }
 
     public List<Tree<T>> GetNodesDeepness(int deepness = 0)
