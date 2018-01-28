@@ -99,28 +99,22 @@ public class BinarySearchTree<T> where T : IComparable<T>
             return;
         }
 
-        if (this.root.Left == null && this.root.Right == null)
-        {
-            this.root = null;
-            return;
-        }
-
-        Node partent = null;
         Node current = this.root;
-
+        Node parent = null;
+        
         while (current.Left != null)
         {
-            partent = current;
+            parent = current;
             current = current.Left;
         }
 
-        if (current.Right != null)
+        if (parent == null)
         {
-            partent.Left = current.Right;
+            this.root = this.root.Right;
         }
         else
         {
-            partent.Left = null;
+            parent.Left = current.Right;
         }
     }
 
